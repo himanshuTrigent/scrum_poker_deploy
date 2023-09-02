@@ -2,11 +2,8 @@
   "name": "scrum-poker",
   "version": "1.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "npm run",
-    "build": "npm build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "build": "npm build"
   },
   "private": true,
   "dependencies": {
