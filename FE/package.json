@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm start",
+    "start": "npm run",
     "build": "npm build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
