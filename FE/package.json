@@ -2,8 +2,9 @@
   "name": "scrum-poker",
   "version": "1.0.0",
   "scripts": {
-    "start": "npm run",
-    "build": "npm build"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "npm install --force && ng build --configuration production"
   },
   "private": true,
   "dependencies": {
