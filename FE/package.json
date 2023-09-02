@@ -1,11 +1,6 @@
 {
   "name": "scrum-poker",
   "version": "1.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "npm install --force && ng build --configuration production"
-  },
   "private": true,
   "dependencies": {
     "@angular/animations": "16.1.0",
