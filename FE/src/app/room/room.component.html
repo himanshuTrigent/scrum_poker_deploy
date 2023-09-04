@@ -13,15 +13,15 @@
           <mat-icon>groups</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <div
-            class="scrollable-menu"
-          >
+          <div class="scrollable-menu">
             <button
               mat-menu-item
               *ngFor="let activeUser of usersArray"
               (click)="$event.stopPropagation()"
             >
-              <ng-container id="klsjdf" [ngSwitch]="activeUser.userData.jobRole">
+              <ng-container
+                [ngSwitch]="activeUser.userData.jobRole"
+              >
                 <span *ngSwitchCase="emojiData[0].role">{{
                   emojiData[0].img
                 }}</span>
@@ -51,7 +51,8 @@
                 }}</span>
               </ng-container>
 
-              <span>{{ activeUser.userData.displayName | titlecase }}
+              <span
+                >{{ activeUser.userData.displayName | titlecase }}
                 <span *ngIf="activeUser.userData.isAdmin">(Admin)</span>
               </span>
 
@@ -96,14 +97,6 @@
             *ngFor="let user of usersArray"
             class="text-primary-color font-bold w-[120px] xxs:w-[70px] xs:w-[90px] font-sans text-sm flex flex-col justify-center items-center gap-2 animate-popin-animation"
           >
-            <!-- <div
-          *ngFor="let user of usersArray"
-          class="w-1/2 h-3/5 xxs:w-[250px] xxs:p-0 xxs:h-[330px] xs:w-[380px] xs:h-[450px] sm:w-[600px] md:w-9/12 lg:w-8/12 xxs:flex-cols-3 xs:flex-cols-3 xxs:gap-4 xs:gap-6 flex flex-wrap gap-14 justify-center overflow-y-auto overflow-x-hidden p-5 xs:p-1"
-        > -->
-            <!-- <div
-            *ngFor="let user of usersArray"
-            class="text-primary-color font-bold w-[120px] xxs:w-[70px] xs:w-[90px] font-sans text-sm flex  justify-center items-center gap-2 animate-popin-animation"
-          > -->
             <ng-container [ngSwitch]="user.actionType">
               <img
                 *ngSwitchCase="'STORY_POINT_SELECTION'"
@@ -141,8 +134,6 @@
           </div>
         </div>
 
-        <!-- </div> -->
-
         <button
           *ngIf="!isStoryPointsRevealed && this.user.isAdmin"
           [disabled]="isRevealBtnDisabled"
@@ -169,7 +160,7 @@
             (click)="updateStoryPoints(points, index)"
             id="card_button"
             [class.active-button]="activeIndex === index"
-            class="card-hover hover:bg-card-light active:bg-primary-shade-color w-[56px] h-[84px] rounded-md bg-white text-scrum-button-inner-text mt-3 font-semibold py-2 px-4 box transition"
+            class="card hover:bg-card-light active:bg-primary-shade-color w-[56px] h-[84px] rounded-md bg-white text-scrum-button-inner-text mt-3 font-semibold py-2 px-4 transition"
           >
             {{ points }}
           </button>

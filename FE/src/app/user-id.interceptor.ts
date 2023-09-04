@@ -21,9 +21,11 @@ export class UserIdInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const userId = this.storageService.user
+    const userId = this.storageService.user?.userId
       ? this.storageService.user.userId
       : JSON.parse(atob(this.cookieService.get('userDetails'))).userId;
+
+    console.log(userId)
 
     const modifiedRequest = request.clone({
       setHeaders: {

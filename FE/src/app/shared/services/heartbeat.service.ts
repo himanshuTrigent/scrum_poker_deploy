@@ -61,7 +61,6 @@ export class HeartbeatService {
             this.openConfirmDialog(roomId);
           }
           }
-        console.log(response)
     });
   };
 

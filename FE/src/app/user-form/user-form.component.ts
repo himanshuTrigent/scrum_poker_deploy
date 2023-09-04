@@ -59,7 +59,7 @@ export class UserFormComponent implements OnInit {
       this.displayName.hasError('required') ||
       this.displayName.hasError('minlength')
     )
-      return 'Your name should have atlest 2 characters';
+      return 'Name should have atleast 2 characters';
 
     if (this.displayName.hasError('maxlength'))
       return 'Your name should not be greater than 15 characters';
