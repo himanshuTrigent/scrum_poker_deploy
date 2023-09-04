@@ -273,6 +273,7 @@ export class RoomComponent implements OnInit, OnDestroy {
           this.storageService.userDetails = this.user;
           this.joinRoom(this.user);
         }
+        else this.router.navigate(['/'])
       });
     } else {
       this.user = JSON.parse(userInCookies);
