@@ -1,55 +1,124 @@
-.active-button{
-    background-color: var(--primary-shade) ;
-    transform: translateY(-10px) scale(1.1);
-    color: white;
-    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1), background-color 0.4s ease; 
-  }
-  
-.card-hover:hover{
-    transform: translateY(-10px) scale(1.1);
-    color: white;
-    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1), background-color 0.4s ease;
+.active-button {
+  background-color: var(--primary-shade);
+  transform: translateY(-10px) scale(1.1);
+  color: white;
+  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1),
+    background-color 0.4s ease;
 }
-#card_button{
-font-family: 'Space Mono' !important;
+.card {
+  box-shadow: 0 1px 2px 1px rgba(167, 183, 194, 0.6);
 }
-/* .main{
-  background-image: radial-gradient(rgba(215, 214, 214, 0.463) 0.8px, transparent 0);
-  background-size: 15px 15px;
-  z-index: -1;
-} */
-.box{
-  /* box-shadow: 0px 0px 5px; */
-  box-shadow: 0 1px 2px 1px rgba(168,182,191,.6);
+
+.card:hover {
+  transform: translateY(-10px) scale(1.1);
+  color: white;
+  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1),
+    background-color 0.4s ease;
 }
-.section2{
-  overflow:"scroll";
+#card_button {
+  font-family: "Space Mono" !important;
 }
-/* .scrollable-menu {
-  max-height: 100px;
-  overflow-y: auto;
-} */
+
 .scrollable-menu {
-  padding: 6px 20px;
   cursor: pointer;
+  width: 220px;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 200px;
-  overflow:scroll;
+  max-height: 180px;
+  overflow-y: scroll;
 }
+/* ::ng-deep div.cdk-overlay-connected-position-bounding-box{
+  margin-left: -80px !important;
+} */
+::ng-deep div.scrollable-menu:hover{
+  background-color: white !important;
+}
+/* .scrollable-menu .namefield{
+  padding: 5px;
+  cursor: pointer;
+} */
 
 /* .scrollable {
   overflow-y: auto;
 } */
-::ng-deep div#mat-menu-panel-0{
-  /* background: red !important; */
-  box-shadow: 0 1px 2px 1px rgba(168,182,191,.6);
+::ng-deep div#mat-menu-panel-0 {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
   border-radius: 10px;
 }
 
-::ng-deep div#cdk-overlay-0{
-  box-shadow: 0 1px 2px 1px rgba(168,182,191,.6);
+::ng-deep div#cdk-overlay-0 {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
   border-radius: 10px;
-  /* background: red !important; */
+}
+::ng-deep div.mat-mdc-menu-panel{
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+  border-radius: 10px;
+}
+::ng-deep div#cdk-overlay-1 {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+  padding: 0px !important;
+  border-radius: 10px;
 
 }
+/* ::ng-deep div#cdk-overlay-2{
+  box-shadow: 0 1px 2px 1px rgba(168,182,191,.6);
+}
+::ng-deep div#cdk-overlay-3{
+  box-shadow: 0 1px 2px 1px rgba(168,182,191,.6);
+}
+::ng-deep div#cdk-overlay-5{
+  box-shadow: 0 1px 2px 1px rgba(168,182,191,.6);
+} */
+
+::ng-deep div#mat-menu-panel-1 {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+}
+::ng-deep div#mat-menu-panel-2 {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+}
+::ng-deep div#mat-menu-panel-3 {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+}
+::ng-deep div.cdk-overlay-pane {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+}
+::ng-deep div#cdk-overlay-7 {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+}
+::ng-deep div#cdk-overlay-4 {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+}
+/* ::ng-deep div.mat-mdc-menu-content {
+  padding: 2px !important;
+} */
+
+.mat-mdc-menu-item {
+  display: flex;
+  width: 100%;
+  cursor:default;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+}
+.mat-mdc-menu-item:hover{
+  background-color: white !important;
+}
+
+
+.change_admin_icon{
+  position: absolute;
+  right: 0;
+}
+
+button[disabled]{
+  opacity: 0.5;
+
+}
+.admin_button{
+  position: absolute;
+  right: 12px;
+}
+.group_icon{
+font-size: 24px;
+}
+

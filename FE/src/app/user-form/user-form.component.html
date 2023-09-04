@@ -1,38 +1,42 @@
-<div class="container1">
-  <h1 class="block p-4 text-lg font-medium font-inner-text ml-4">
-    Enter Details
-  </h1>
+<div class="user-form-container">
+  <!-- <div class="flex align-middle pt-4">  <img
+    src="../../assets/scrum_poker.svg"
+    class="h-4"
+    alt="Scrum Poker Logo"
+  /> -->
+  <div class="block p-2 text-base font-normal font-inner-text ml-4">
+    Scrum-A-Lot
+  </div>
+  <!-- </div> -->
+  <hr>
   <div id="job-role-icon">
     <span id="icon">{{ data.img }}</span>
     <p class="job-role" id="selectedjobRole">{{ data.role }}</p>
   </div>
   <mat-dialog-content>
-    <form [formGroup]="userFormGroup">
-      
-        <!-- <input
-          matInput
-          class="rounded-2xl aaaa"
-          formControlName="displayName"
-          class="pl-2"
-          placeholder="Display Name"
-          type="text"
-          required
-        /> -->
-        <div class="abcd">
+    <form [formGroup]="userFormGroup" class="w-full">
+      <div class="w-full px-1">
         <input
           type="text"
-          id="name"
-          class="form-control"
+          id="displayName"
+          class="w-full"
           formControlName="displayName"
-          placeholder="Display Name"
+          placeholder="A Story needs a name...."
           type="text"
           required
         />
-        <div class="error" *ngIf="displayName.invalid && displayName.touched">
-          {{ getErrorMessage() }}
+        <div
+          class="min-h-[30px] h-[30px] leading-4 invisible py-1 px-2 flex justify-center"
+          [class.error]="displayName.invalid && displayName.touched"
+        >
+          <p
+            *ngIf="displayName.invalid && displayName.touched"
+            class="animate-error-animation"
+          >
+            {{ getErrorMessage() }}
+          </p>
         </div>
       </div>
-      
 
       <mat-form-field>
         <mat-label>Job Role</mat-label>
@@ -46,8 +50,8 @@
           <mat-option
             [value]="role.role"
             *ngFor="let role of emojiData; let index = index"
-            style="font-size: small"
-            class=" text-main-text"
+      
+            class="text-main-text"
           >
             {{ role.role }}
           </mat-option>
@@ -59,14 +63,14 @@
     </form>
   </mat-dialog-content>
 
-  <mat-dialog-actions align="end">
+  <mat-dialog-actions align="center">
     <button
       [mat-dialog-close]="{
         displayName: displayName.value,
         selectedJobRole: selectedJobRole.value
       }"
       [disabled]="userFormGroup.invalid"
-      class="bg-scrum-button-inner-background hover:bg-hover-color active:bg-active-color font-medium text-scrum-button-inner-text py-3 mr-3 ml-6 mb-2 rounded-lg w-2/6"
+      class="bg-scrum-button-inner-background hover:bg-hover-color active:bg-active-color font-medium text-scrum-button-inner-text py-3 mx-5 rounded-lg w-full"
     >
       Enter Room
     </button>

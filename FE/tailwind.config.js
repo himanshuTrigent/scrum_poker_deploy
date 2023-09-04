@@ -28,6 +28,7 @@ module.exports = {
       animation: {
         "card-animation": "card 0.4s",
         "popin-animation" : "popin 0.3s",
+        "error-animation": "uptodown 0.3s",
       },
       keyframes: {
         card: {
@@ -48,6 +49,16 @@ module.exports = {
           },
           "100%": {
             transform: "scale(1)",
+          },
+        },
+        uptodown: {
+          "0%": {
+            transform: "translateY(-10px)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateY(0%)",
+            opacity: "100",
           },
         },
       },

@@ -1,24 +1,4 @@
-section{
-    scroll-snap-align: start;
-     
-}
 
-#initial-section{
-    scroll-margin-top: 5rem;
-}
-/* body {
-    background-image: radial-gradient(rgb(200, 199, 199) 0.8px, transparent 0);
-    background-size: 15px 15px;
-    z-index: -1;
-  } */
-/* nav{
-    background-image: radial-gradient(rgb(200, 199, 199) 0.8px, transparent 0);
-    background-size: 15px 15px;
-    z-index: 1;
-}  */
-.abc{
-    font-weight: 900;
-} 
 .mat-form-field-should-float .mat-form-field-label-wrapper {
     display: none!important;
 }
@@ -30,7 +10,7 @@ section{
     overflow: hidden;
     height: 100%;
 }
-.section2{
+.description_section{
     overflow:scroll;
   }
 
