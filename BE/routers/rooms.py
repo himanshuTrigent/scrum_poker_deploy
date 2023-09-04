@@ -47,7 +47,6 @@ async def join_room(room_id: str, user_details: User_details):
             admin_users.remove(where('admin_user_id') == user_details.userId)
 
             update_data_in_db(user_to_be_stored, room_id)
-            # db.update_multiple({'int': 4}, where('char') == 'b')
             return user_to_be_stored
         else:
             return JSONResponse(status_code=403, content={"error": "User is already in the room"})
