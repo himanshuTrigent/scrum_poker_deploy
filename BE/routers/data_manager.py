@@ -4,8 +4,8 @@ from tinydb import TinyDB, Query, where
 db = TinyDB('rooms_data_db.json')
 
 
-def save_data_in_db(data_to_be_stored):
-    rooms = db.table('rooms')
+def save_data_in_db(data_to_be_stored, document_name: str):
+    rooms = db.table(document_name)
     rooms.insert(data_to_be_stored)
 
 
