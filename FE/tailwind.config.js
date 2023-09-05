@@ -25,7 +25,7 @@ module.exports = {
       },
       animation: {
         "card-animation": "card 0.4s",
-        "popin-animation": "popin 0.3s",
+        "popin-animation" : "popin 0.3s",
         "error-animation": "uptodown 0.3s",
       },
       keyframes: {

@@ -256,8 +256,8 @@ export class RoomComponent implements OnInit, OnDestroy {
               ? JSON.parse(userInCookies).displayName
               : '',
           },
-          width: '310px',
-          height:'450px',
+          width: '300px',
+          height:'410px',
         });
 
       userDialogRef.afterClosed().subscribe((response: any): void => {
@@ -273,6 +273,7 @@ export class RoomComponent implements OnInit, OnDestroy {
           this.storageService.userDetails = this.user;
           this.joinRoom(this.user);
         }
+        else this.router.navigate(['/'])
       });
     } else {
       this.user = JSON.parse(userInCookies);
