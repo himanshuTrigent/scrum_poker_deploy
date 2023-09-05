@@ -27,20 +27,11 @@
   max-height: 180px;
   overflow-y: scroll;
 }
-/* ::ng-deep div.cdk-overlay-connected-position-bounding-box{
-  margin-left: -80px !important;
-} */
+
 ::ng-deep div.scrollable-menu:hover{
   background-color: white !important;
 }
-/* .scrollable-menu .namefield{
-  padding: 5px;
-  cursor: pointer;
-} */
 
-/* .scrollable {
-  overflow-y: auto;
-} */
 ::ng-deep div#mat-menu-panel-0 {
   box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
   border-radius: 10px;
@@ -60,15 +51,6 @@
   border-radius: 10px;
 
 }
-/* ::ng-deep div#cdk-overlay-2{
-  box-shadow: 0 1px 2px 1px rgba(168,182,191,.6);
-}
-::ng-deep div#cdk-overlay-3{
-  box-shadow: 0 1px 2px 1px rgba(168,182,191,.6);
-}
-::ng-deep div#cdk-overlay-5{
-  box-shadow: 0 1px 2px 1px rgba(168,182,191,.6);
-} */
 
 ::ng-deep div#mat-menu-panel-1 {
   box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
@@ -88,9 +70,6 @@
 ::ng-deep div#cdk-overlay-4 {
   box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
 }
-/* ::ng-deep div.mat-mdc-menu-content {
-  padding: 2px !important;
-} */
 
 .mat-mdc-menu-item {
   display: flex;
@@ -108,11 +87,6 @@
 .change_admin_icon{
   position: absolute;
   right: 0;
-}
-
-button[disabled]{
-  opacity: 0.5;
-
 }
 .admin_button{
   position: absolute;

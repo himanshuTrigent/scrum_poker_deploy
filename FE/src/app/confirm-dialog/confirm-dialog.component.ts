@@ -23,9 +23,8 @@ export class ConfirmDialogComponent implements OnInit {
   ) {}
 
   public timeLeft: number = 60;
-  public timeStart: number = 0;
   public interval: any;
-  public startInterval:any;
+  
   ngOnInit(): void {
     this.startTimer();
   }
@@ -37,13 +36,7 @@ export class ConfirmDialogComponent implements OnInit {
         this.timeLeft = 60;
       }
     }, 1000);
-    this.startInterval = setInterval(()=>{
-      if(this.timeStart < 60){
-        this.timeStart++;
-      }else{
-        this.timeStart = 0;
-      }
-    },1000)
+
   }
 
   public confirm(): void {
