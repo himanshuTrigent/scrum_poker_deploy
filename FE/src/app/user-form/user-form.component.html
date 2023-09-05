@@ -1,7 +1,9 @@
 <div class="user-form-container">
-  <h1 class="block p-4 text-lg font-medium font-inner-text ml-3">
-    Enter Details
-  </h1>
+
+  <div class="block p-2 text-base font-normal font-inner-text ml-4">
+    Scrum-A-Lot
+  </div>
+  <hr>
   <div id="job-role-icon">
     <span id="icon">{{ data.img }}</span>
     <p class="job-role" id="selectedjobRole">{{ data.role }}</p>
@@ -18,8 +20,16 @@
           type="text"
           required
         />
-        <div class="min-h-[30px] h-[30px] leading-4 invisible py-1 px-2 flex justify-center" [class.error]="displayName.invalid && displayName.touched">
-          <p *ngIf="displayName.invalid && displayName.touched" class="animate-error-animation">{{ getErrorMessage() }}</p>
+        <div
+          class="min-h-[30px] h-[30px] leading-4 invisible py-1 px-2 flex justify-center"
+          [class.error]="displayName.invalid && displayName.touched"
+        >
+          <p
+            *ngIf="displayName.invalid && displayName.touched"
+            class="animate-error-animation"
+          >
+            {{ getErrorMessage() }}
+          </p>
         </div>
       </div>
 
@@ -35,6 +45,7 @@
           <mat-option
             [value]="role.role"
             *ngFor="let role of emojiData; let index = index"
+      
             class="text-main-text"
           >
             {{ role.role }}

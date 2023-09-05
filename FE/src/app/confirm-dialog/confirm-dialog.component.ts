@@ -1,4 +1,4 @@
-import { Component, Inject} from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { HeartbeatService } from '../shared/services/heartbeat.service';
@@ -9,7 +9,7 @@ import { WebsocketService } from '../shared/services/websocket.service';
   templateUrl: './confirm-dialog.component.html',
   styleUrls: ['./confirm-dialog.component.css'],
 })
-export class ConfirmDialogComponent {
+export class ConfirmDialogComponent implements OnInit {
   constructor(
     private router: Router,
     public heartbeatService: HeartbeatService,
@@ -22,6 +22,22 @@ export class ConfirmDialogComponent {
     }
   ) {}
 
+  public timeLeft: number = 60;
+  public interval: any;
+  
+  ngOnInit(): void {
+    this.startTimer();
+  }
+  startTimer() {
+    this.interval = setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.timeLeft = 60;
+      }
+    }, 1000);
+
+  }
 
   public confirm(): void {
     if (this.data.type == 'roomId') {

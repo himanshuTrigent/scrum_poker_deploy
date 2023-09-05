@@ -20,12 +20,16 @@
 }
 
 .scrollable-menu {
-  padding: 6px 20px;
   cursor: pointer;
+  width: 220px;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 200px;
+  max-height: 180px;
   overflow-y: scroll;
+}
+
+::ng-deep div.scrollable-menu:hover{
+  background-color: white !important;
 }
 
 ::ng-deep div#mat-menu-panel-0 {
@@ -37,3 +41,58 @@
   box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
   border-radius: 10px;
 }
+::ng-deep div.mat-mdc-menu-panel{
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+  border-radius: 10px;
+}
+::ng-deep div#cdk-overlay-1 {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+  padding: 0px !important;
+  border-radius: 10px;
+
+}
+
+::ng-deep div#mat-menu-panel-1 {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+}
+::ng-deep div#mat-menu-panel-2 {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+}
+::ng-deep div#mat-menu-panel-3 {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+}
+::ng-deep div.cdk-overlay-pane {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+}
+::ng-deep div#cdk-overlay-7 {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+}
+::ng-deep div#cdk-overlay-4 {
+  box-shadow: 0 1px 2px 1px rgba(168, 182, 191, 0.6);
+}
+
+.mat-mdc-menu-item {
+  display: flex;
+  width: 100%;
+  cursor:default;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+}
+.mat-mdc-menu-item:hover{
+  background-color: white !important;
+}
+
+
+.change_admin_icon{
+  position: absolute;
+  right: 0;
+}
+.admin_button{
+  position: absolute;
+  right: 12px;
+}
+.group_icon{
+font-size: 24px;
+}
+

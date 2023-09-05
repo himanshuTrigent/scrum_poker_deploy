@@ -2,86 +2,144 @@
   <div
     class="w-screen flex justify-around h-screen flex-col items-center xxs:h-auto overflow-hidden"
   >
-    <div class="w-full flex justify-between items-center mt-6 ml-24">
+    <div
+      class="w-full flex justify-between items-center align-middle mt-6 ml-24"
+    >
       <img
         src="../../assets/scrum_poker.svg"
         class="h-12 mr-3"
         alt="Scrum Poker Logo"
       />
-      <div class="flex mr-36">
+      <div class="flex mr-24 items-center justify-center">
         <button mat-icon-button [matMenuTriggerFor]="menu">
-          <mat-icon>groups</mat-icon>
+          <mat-icon class="group_icon flex justify-center items-center">groups</mat-icon>
         </button>
-        <mat-menu #menu="matMenu">
-          <div class="scrollable-menu">
-            <button
-              mat-menu-item
+        <mat-menu #menu="matMenu" xPosition="after">
+          <div
+            id="spacer"
+            class="scrollable-menu flex flex-col items-center justify-between"
+          >
+            <div
+              mat-menu-item 
               *ngFor="let activeUser of usersArray"
               (click)="$event.stopPropagation()"
             >
-              <ng-container
-                [ngSwitch]="activeUser.userData.jobRole"
-              >
-                <span *ngSwitchCase="emojiData[0].role">{{
-                  emojiData[0].img
-                }}</span>
-                <span *ngSwitchCase="emojiData[1].role">{{
-                  emojiData[1].img
-                }}</span>
-                <span *ngSwitchCase="emojiData[2].role">{{
-                  emojiData[2].img
-                }}</span>
-                <span *ngSwitchCase="emojiData[3].role">{{
-                  emojiData[3].img
-                }}</span>
-                <span *ngSwitchCase="emojiData[4].role">{{
-                  emojiData[4].img
-                }}</span>
-                <span *ngSwitchCase="emojiData[5].role">{{
-                  emojiData[5].img
-                }}</span>
-                <span *ngSwitchCase="emojiData[6].role">{{
-                  emojiData[6].img
-                }}</span>
-                <span *ngSwitchCase="emojiData[7].role">{{
-                  emojiData[7].img
-                }}</span>
-                <span *ngSwitchCase="emojiData[8].role">{{
-                  emojiData[8].img
-                }}</span>
-              </ng-container>
+              <div class="flex flex-row items-center namefield">
+                <ng-container [ngSwitch]="activeUser.userData.jobRole">
+                  <span *ngSwitchCase="emojiData[0].role">{{
+                    emojiData[0].img
+                  }}</span>
+                  <span *ngSwitchCase="emojiData[1].role">{{
+                    emojiData[1].img
+                  }}</span>
+                  <span *ngSwitchCase="emojiData[2].role">{{
+                    emojiData[2].img
+                  }}</span>
+                  <span *ngSwitchCase="emojiData[3].role">{{
+                    emojiData[3].img
+                  }}</span>
+                  <span *ngSwitchCase="emojiData[4].role">{{
+                    emojiData[4].img
+                  }}</span>
+                  <span *ngSwitchCase="emojiData[5].role">{{
+                    emojiData[5].img
+                  }}</span>
+                  <span *ngSwitchCase="emojiData[6].role">{{
+                    emojiData[6].img
+                  }}</span>
+                  <span *ngSwitchCase="emojiData[7].role">{{
+                    emojiData[7].img
+                  }}</span>
+                  <span *ngSwitchCase="emojiData[8].role">{{
+                    emojiData[8].img
+                  }}</span>
+                </ng-container>
 
-              <span
-                >{{ activeUser.userData.displayName | titlecase }}
-                <span *ngIf="activeUser.userData.isAdmin">(Admin)</span>
-              </span>
+                <div
+                  id="test"
+                  class="text-main-text flex flex-row items-center justify-start ml-2"
+                >
+                  {{
+                    activeUser.userData.displayName.length < 8
+                      ? activeUser.userData.displayName
+                      : (activeUser.userData.displayName.slice(0, 8)
+                        | titlecase)
+                  }}
+                  <div
+                    class="text-main-text"
+                    *ngIf="activeUser.userData.displayName.length > 14"
+                  >
+                    ...
+                  </div>
+                  <div class="text-main-text admin_button">
+                    <div *ngIf="activeUser.userData.isAdmin"><span class="material-symbols-outlined">
+                      admin_panel_settings
+                      </span></div>
+                  </div>
+                </div>
+                <div class="change_admin_icon">
+                  <button
+                    *ngIf="user.isAdmin && !activeUser.userData.isAdmin"
+                    mat-icon-button
+                    [matMenuTriggerFor]="menu"
+                  >
+                    <mat-icon>more_horiz</mat-icon>
+                  </button>
+                </div>
+              </div>
 
-              <button
-                *ngIf="user.isAdmin && !activeUser.userData.isAdmin"
-                mat-icon-button
-                [matMenuTriggerFor]="menu"
-              >
-                <mat-icon>more_horiz</mat-icon>
-              </button>
-              <mat-menu #menu="matMenu">
+              <mat-menu #menu="matMenu" yPosition="below">
                 <button
+                  class="p-0"
                   mat-menu-item
                   (click)="changeAdminUser(activeUser.userData)"
                 >
                   <span>Set As Admin</span>
                 </button>
               </mat-menu>
-            </button>
+            </div>
           </div>
         </mat-menu>
-        <p class="mx-6 font-mono flex flex-col items-center">
-          <span class="font-semibold text-xl">{{
+        <p class="ml-6 font-mono flex flex-col items-center">
+          <span class="font-semibold text-xl text-main-text">{{
             user.displayName | titlecase
           }}</span>
-          <span class="text-sm font-medium">{{
+          <span class="text-sm font-medium font-inner-text text-main-text">{{
             user.jobRole | titlecase
           }}</span>
         </p>
+          <span class="text-sm font-medium font-inner-text text-main-text mt-1.5 ml-2">
+            <ng-container [ngSwitch]="user.jobRole">
+              <span *ngSwitchCase="emojiData[0].role" class="text-3xl">{{
+                emojiData[0].img
+              }}</span>
+              <span *ngSwitchCase="emojiData[1].role" class="text-3xl">{{
+                emojiData[1].img
+              }}</span>
+              <span *ngSwitchCase="emojiData[2].role" class="text-3xl">{{
+                emojiData[2].img
+              }}</span>
+              <span *ngSwitchCase="emojiData[3].role" class="text-3xl">{{
+                emojiData[3].img
+              }}</span>
+              <span *ngSwitchCase="emojiData[4].role" class="text-3xl">{{
+                emojiData[4].img
+              }}</span>
+              <span *ngSwitchCase="emojiData[5].role" class="text-3xl">{{
+                emojiData[5].img
+              }}</span>
+              <span *ngSwitchCase="emojiData[6].role" class="text-3xl">{{
+                emojiData[6].img
+              }}</span>
+              <span *ngSwitchCase="emojiData[7].role" class="text-3xl">{{
+                emojiData[7].img
+              }}</span>
+              <span *ngSwitchCase="emojiData[8].role" class="text-3xl">{{
+                emojiData[8].img
+              }}</span>
+            </ng-container>
+          </span>
+        
       </div>
     </div>
     <div
