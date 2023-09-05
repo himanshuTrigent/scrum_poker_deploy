@@ -1,1 +1,0 @@
-{"adminUsers": {"1": {"admin_user_id": null}}, "rooms": {"1": {"roomId": "5fd330f1-3a45-4ad7-a57a-1580fb1a8dee", "users": [{"userId": "string", "displayName": "string", "isAdmin": false, "isActive": true, "jobRole": null, "data": {"storyPoints": null}}]}}}
